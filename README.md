@@ -6,3 +6,6 @@ A list of (almost) every number you'll see! 0 is the start. 0.001-999,900,000,00
 
 # Fractions of 65536 (65536 items)
 Similar to how computers store fractions. All fractions from 0 to (almost) 1. Try to find numbers like 0.1 or one third, I bet you can't!
+
+# Primes to 5 Million (348513 items)
+A list of prime numbers up to 5 million, generated via [this scratch project.](https://scratch.mit.edu/projects/20797789/)
