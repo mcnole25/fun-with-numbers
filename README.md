@@ -1,4 +1,4 @@
-## Introduction
+# Introduction
 Experimenting with big lists of numbers. Everything is in the "files" folder. **Currently WIP!**
 
 ## 16 Bit Precision
