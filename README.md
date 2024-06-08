@@ -1,7 +1,7 @@
 # Introduction
-Experimenting with big lists of numbers. Everything is in the "files" folder. **Currently WIP!**
+Experimenting with big lists of numbers. Everything is in the "files" folder.
 
-The amount of items in each list range from 10,000 to 100,000.
+This repository was made for fun; the amount of items in each list range from 10,000 to 100,000.
 
 # Files
 
