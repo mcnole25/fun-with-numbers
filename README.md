@@ -5,6 +5,9 @@ The amount of items in each list range from 10,000 to 100,000.
 
 # Files
 
+### 0 to 1
+A list of all decimals from 0 to 1 with 4 digits of precision.
+
 ### 16 Bit Precision
 A list of all possible 16 bit precision values rounded to 10 digits. Generated via Javascript.
 
