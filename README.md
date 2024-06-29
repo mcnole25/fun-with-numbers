@@ -9,7 +9,7 @@ This repository was made for fun; the amount of items in each list range from 10
 A list of all decimals from 0 to 1 with 4 digits of precision.
 
 ### 16 Bit Precision
-A list of all possible 16 bit precision values rounded to 10 digits. Generated via Javascript.
+A list of all possible 16 bit precision values without rounding. Generated via Javascript.
 
 ### Inches to Meters
 Every possible measurement up to 1 mile (1.609344 km) with steps of inches (2.54 cm) converted to meters.
