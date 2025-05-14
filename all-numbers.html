@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html><head>
+<title>All Rational Numbers</title>
+<style>
+body {
+background-color: #222;
+color: #fff;
+font-size: 16px;
+font-family: arial;
+}
+button {
+background-color: #222;
+color: #fff;
+}
+#pageNum {
+display: inline-block;
+width: 250px;
+text-align: center;
+}
+#container {
+display: grid;
+grid-template-columns: repeat(12, 1fr);
+line-height: 3em;
+}
+</style>
+</head>
+<body>
+<button onclick="page--;">&lt;==</button>
+<span id="pageNum"></span>
+<button onclick="page++;">==&gt;</button>
+<br><div style="display: block; margin: 25px;"></div><div id="container"></div>
+<script>
+function createEntry(str) {
+txt = document.createElement("div");
+txt.innerText = str;
+container.appendChild(txt);
+}
+page = 0;
+limit = 25;
+setInterval(function() {
+if (page < 0) {page = 0;}
+pageNum.innerHTML = "Page " + page + ": " + (page > 0 ? "Inputs " + (1 + (page - 1) * limit) + "-" + (page * limit) : "Special Numbers");
+container.innerHTML = "";
+if (page == 0) {
+createEntry("\u221a2");
+createEntry("-\u221a2");
+createEntry("0");
+}
+if (page > 0) {
+for (i = 1 + (page - 1) * limit; i <= page * limit; i++) {
+printFrac(i);
+}}}, 500);
+function printFrac(lim) {
+for (n = 1; n < lim; n++) {
+d = lim - n;
+out = n + "\u2044" + d;
+if (decimal(d)) {
+out = n/d;
+} else if (n >= d) {
+out = Math.floor(n/d) + " " + (n % d) + "\u2044" + d;
+}
+if (coprime(n, d)) {
+createEntry(out);
+createEntry("-" + out);
+}}}
+function gcd(a, b) {
+while (b != 0) {
+temp = b;
+b = a % b;
+a = temp;
+}
+return a;
+}
+function coprime(num1, num2) {
+return gcd(num1, num2) == 1;
+}
+function decimal(num) {
+if (num < 1) return false;
+while (num % 2 == 0) {num /= 2;}
+while (num % 5 == 0) {num /= 5;}
+return num == 1;
+}
+</script>
+</body></html>
