@@ -3,6 +3,24 @@ Experimenting with big lists of numbers. Everything is in the "files" folder.
 
 This repository was made for fun; the amount of items in each list range from 10,000 to 100,000.
 
+# Non-Lists
+
+### HTML File: all-numbers.html
+
+This is my notation for writing rational numbers (positive & negative), where we have integers, decimals, fractions, & mixed fractions.
+
+You can browse through the infinitely many pages, but the table updates every 500ms to avoid excessive lag.
+
+In page 0, we have the "Special Numbers". 0 is a rational number included to complete the set.
+
+Note: The 2 entries: √2, -√2, are both IRRATIONAL. They cannot be written as fractions, but I treat the square roots of 2 as special constants, so they're included in my notation.
+
+Full set: (All Rationals (Q)) Union (All Real Square Roots of 2)
+
+The list is guaranteed to include every rational number. My code goes through all possible sums of a given input, keeps only the simplified fractions, then converts to decimal or a mixed fraction if necessary.
+
+You can download this file or view it online to start browsing through all the numbers.
+
 # Files
 
 ### 0 to 1
