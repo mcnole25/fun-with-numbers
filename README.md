@@ -23,6 +23,10 @@ You can download this file or view it online to start browsing through all the n
 
 ### HTML File: console-tools.html
 
+I made a big tool composed of smaller tools! Now you can have fun with the Javascript console by generating lists of numbers.
+
+You can download this file or view it online to start browsing through all the tools.
+
 # Files
 
 ### 0 to 1
