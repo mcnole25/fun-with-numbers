@@ -35,7 +35,7 @@ width: 80vw;
 <body>
 <h1>mcnole25's Mini Console Tools</h1>
 <h1>A big tool made of small quirky tools!</h1>
-<p id="desc">I made a collection of 40 Javascript functions to generate lists of data & numbers. Your built in browser's console is used to show the outputs.<br>All these functions were developed & tested by me. Copy & paste any of them, then open the console to try it out.<br>If you spot an overlooked error or performance issue, please notify me on Github right away, as I aim to provide information as accurate as possible.<br>I may not respond to all issues reported, as I'm not active on Github much, but when I'm around, I'll ensure to review & fix any issue.<br><br>"*" = low quality tool using variable instead of function, but still works; high quality version comes later.</p>
+<p id="desc">I made a collection of 40 Javascript functions to generate lists of data & numbers. Your built in browser's console is used to show the outputs.<br>All these functions were developed & tested by me. Copy & paste any of them, then open the console to try it out.<br>If you spot an overlooked error or performance issue, please notify me on Github right away, as I aim to provide information as accurate as possible.<br>I may not respond to all issues reported, as I'm not active on Github much, but when I'm around, I'll ensure to review & fix any issue.</p>
 <div id="container">
 <div>
 <h1>Prime Number Generator</h1>
@@ -113,15 +113,9 @@ console.log(ar.join("\n"));
 <p>The function takes a search query for the 1st input, then generates reciprocals up to the 2nd input.</p>
 </div>
 <div>
-<h1>Decimal Period Searcher*</h1>
-<textarea readonly=true>console.clear(); digitperiod = 3;
-arr = factor(digitperiod, 100000);
-for (r = 1; r < digitperiod; r++) {
-t = factor(r, 100000);
-arr = arr.filter(b => !t.includes(b));
-}
-console.log(arr.join("\n"));
-function factor(q, n) {
+<h1>Decimal Period Searcher</h1>
+<textarea readonly=true>console.clear(); periodsearch(3, 100000);
+function periodsearch(q, n) {
 ar = [];
 for (i = 1; i <= n; i++) {
 val = 10n**100n/BigInt(i);
@@ -131,14 +125,23 @@ d = "1";
 d = "0." + "0".repeat(100 - String(val).length) + val;
 d = String(d).replace(/0+$/, "");
 }
-ar.push("1\u2044" + i + " = " + d);
+p = true;
+if (q > 1) {
+for (qq = 1; qq < q; qq++) {
+for (k = 0; k <= 50/q; k++) {
+d1 = String(d).slice(String(d).length - (k + 1) * q, String(d).length - k * q);
+d2 = String(d).slice(String(d).length - (k + 2) * q - qq, String(d).length - (k + 1) * q - qq);
+p = p && (d1 != d2);
+}}}
+for (k = 0; k <= 50/q; k++) {
+d1 = String(d).slice(String(d).length - (k + 1) * q, String(d).length - k * q);
+d2 = String(d).slice(String(d).length - (k + 2) * q, String(d).length - (k + 1) * q);
+p = p && (d1 == d2);
 }
-for (qq = 0; qq <= 20/q; qq++) {
-ar = ar.filter(a => a.slice(a.length - (qq + 1) * q, a.length - qq * q) == a.slice(a.length - (qq + 2) * q, a.length - (qq + 1) * q));
-}
-return ar;
+if (p) {ar.push("1\u2044" + i + " = " + d);}}
+console.log(ar.join("\n"));
 }</textarea><br>
-<p>An input "digitperiod" is used to generate all possible integer reciprocals with a certain period length.</p>
+<p>The function generates all possible integer reciprocals with a certain period length. Example: 0.09090909... is period 2.</p>
 </div>
 <div>
 <h1>Digit Error Generator</h1>
@@ -156,7 +159,7 @@ ar = ar.filter(N => N != n && String(N).length == String(n).length);
 ar = ar.sort((a, b) => a - b);
 console.log(ar.join(", "));
 }</textarea><br>
-<p>The function reads the input number, then generates all possible numbers with exactly 1 digit changed.</p>
+<p>The function reads the input number, then generates all possible numbers with exactly 1 digit changed. Works up to 9007199254740991.</p>
 </div>
 <div>
 <h1>Power Digit Race Simulator</h1>
@@ -178,38 +181,36 @@ console.log(ar.join("\n"));
 <p>The function sets up a table with all 10 digits counted at 0, then counts up from n**1 to n**k. Which digit will win?</p>
 </div>
 <div>
-<h1>4 Number Expression Generator</h1>
-<textarea readonly=true>console.clear(); operations(0, 12);
-function operations(n, l) {
-ar = [];
-for (a = 1; a <= l; a++) {
-for (b = 1; b <= l; b++) {
-for (c = 1; c <= l; c++) {
-for (d = 1; d <= l; d++) {
-for (o = 0; o < 27; o++) {
-op1 = ((Math.floor(o/9) % 3) == 0) ? "+" : (((Math.floor(o/9) % 3) == 1) ? "-" : "*");
-op2 = ((Math.floor(o/3) % 3) == 0) ? "+" : (((Math.floor(o/3) % 3) == 1) ? "-" : "*");
-op3 = (o % 3 == 0) ? "+" : ((o % 3 == 1) ? "-" : "*");
-exp = a + " " + op1 + " " + b + " " + op2 + " " + c + " " + op3 + " " + d;
-ca = exp.replace(/- /g, "+ -").split("+");
-for (i = 0; i < ca.length; i++) {
-m = 1; p = ca[i].split("*");
-for (j = 0; j < p.length; j++) {
-m *= p[j];
+<h1>Expression Generator</h1>
+<textarea readonly=true>console.clear(); expressions(0, 12);
+function expressions(n, l) {
+ar = []; m = []; p = [];
+for (i = l; i > 1; i--) {
+for (j = i; j > 1; j--) {
+m.push(i + " * " + j);
+p.push(i * j);
+}}
+for (i = l; i >= -l; i--) {
+m.push(i); p.push(i);
 }
-ca[i] = m;
-}
-m = 0;
-for (i = 0; i < ca.length; i++) {
-m += ca[i];
-}
-ca = m;
-if (ca == n) {
-ar.push(exp + " = " + ca);
-}}}}}}
+for (i = 2; i <= l; i++) {
+for (j = 2; j <= i; j++) {
+m.push("-" + i + " * " + j);
+p.push(-i * j);
+}}
+for (i = 0; i < m.length; i++) {
+for (j = 0; j <= i; j++) {
+for (k = 0; k <= j; k++) {
+a = Number(p[i]) + Number(p[j]) + Number(p[k]);
+x = m[k] + " + " + m[j] + " + " + m[i];
+x = x.replace(/ \+ 0/g, "").replace(/^0 \+ /g, "").replace(/ \+ -/g, " - ");
+v = (x.charAt(0) != "-" && (x.includes("+") || x.includes("-") || x.includes("*")));
+if (v && a == n) {ar.push(x + " = " + a);}}}}
+ar = ar.sort();
+ar = ar.sort((a, b) => a.length - b.length);
 console.log(ar.join("\n"));
 }</textarea><br>
-<p>The function calculates all possible add-subtract-multiply combos where each term goes up to the 2nd input, to then equal the 1st input.</p>
+<p>The function calculates all possible unordered add-subtract-multiply combos, with a maximum of 2 numbers per product & 3 products per expression.</p>
 </div>
 <div>
 <h1>Irrational Fraction Approximator</h1>
@@ -363,7 +364,7 @@ for (i = 1; i <= l; i++) {func.push(((f != 1 && i == 1) ? f + " * " : "") + "F(n
 if (o != 0) {func.push(o);}
 console.log("F(n) = " + func.join(" + ").replace(/\+ -/g, "- ") + "\n" + ar.join(", "));
 }</textarea><br>
-<p>The function creates a custom Fibonacci sequence with a term limit, a last term factor, a number of last terms to add, & a final offset addition. Can generate Pell, tribonacci, 3 way fibonacci, etc.</p>
+<p>The function creates a custom Fibonacci sequence with a term limit, a last term factor, a number of last terms to add, & a final offset addition. Can generate Pell, Tribonacci, 3 way Fibonacci, etc.</p>
 </div>
 <div>
 <h1>Factored Square Root Generator</h1>
@@ -452,7 +453,7 @@ ar.push(i + "\n" + tt + t[(i - 1) % 5]);
 }
 console.log(ar.join("\n\n"));
 }</textarea><br>
-<p>The function visualizes tally marks from 1 to n. If you know how tally works, no further explanation is needed.</p>
+<p>The function visualizes tally marks from 0 to the given input. If you know how tally works, no further explanation is needed.</p>
 </div>
 <div>
 <h1>Views & Likes Table Generator</h1>
@@ -512,11 +513,12 @@ ar.push(Math.round(i/n * c) + " km/s  \u0009" + Math.sqrt(1 - (i/n)**2).toFixed(
 }
 console.log(ar.join("\n"));
 }</textarea><br>
-<p>The function takes the input value, then generates increments of 1/input*c up to light speed, with time dilation & double velocity. Only use if you have a basic understanding of special relativity.</p>
+<p>The function takes the input value, then generates increments of 1/input * c up to light speed, with time dilation & double velocity. Only use if you understand special relativity.</p>
 </div>
 <div>
-<h1>Multiply/Add Combo Rearranger*</h1>
-<textarea readonly=true>console.clear(); op = "**+*+";
+<h1>Multiply/Add Combo Rearranger</h1>
+<textarea readonly=true>console.clear(); rearrangeop("*++**");
+function rearrangeop(op) {
 op = op.split("+").sort((a, b) => b.length - a.length);
 f = factorial(op.length);
 for (ii = 0; ii < op.length; ii++) {
@@ -542,8 +544,8 @@ x[j] = x[j].split("*").sort((a, b) => Math.random() - 0.5).join("*");
 x = x.sort((a, b) => Math.random() - 0.5).join("+");
 x = x.split("").join(" ");
 if (!ar.includes(x)) {ar.push(x);}}
-ar.sort(); if (ar.length == f) {console.log(ar.join("\n"))} else {console.log("Error :(")};</textarea><br>
-<p>An input "op" is used to exhaustively produce all permutations of addition & multiplication, with algebraic variables instead of numbers.</p>
+ar.sort(); if (ar.length == f) {console.log(ar.join("\n"));}}</textarea><br>
+<p>The function exhaustively produces all permutations of addition & multiplication, with algebraic variables as substitutes for numbers.</p>
 </div>
 <div>
 <h1>Lucky Number Series Generator</h1>
@@ -559,7 +561,7 @@ ln = ar.length;
 }
 console.log(ar.join(", "));
 }</textarea><br>
-<p>The function sieves out a list of positive integers, with "lucky" numbers meaning they survive all the eliminations.</p>
+<p>The function sieves out a list of positive integers in a certain way, with "lucky" numbers meaning they survive all the eliminations.</p>
 </div>
 <div>
 <h1>2x2 Sudoku Generator</h1>
@@ -585,7 +587,7 @@ s = s.join("\n");
 if (v && !ar.includes(s)) {ar.push(s);}}
 console.log(ar.sort().join("\n\n"));
 }</textarea><br>
-<p>The function checks all possibilities & generates all possible 2x2 sudoku solutions. Spoiler: There are 288 possibilities.</p>
+<p>The function checks all possibilities & generates all possible 2x2 Sudoku solutions. Spoiler: There are 288 possibilities.</p>
 </div>
 <div>
 <h1>Impossible Square Sums Generator</h1>
@@ -625,7 +627,7 @@ ar.push("R".repeat(iii) + "P".repeat(ii) + "S".repeat(i) + " - Winner(s): " + w)
 }}
 console.log(ar.join("\n"));
 }</textarea><br>
-<p>The function checks all unordred ways n people can play rock paper scissors, then generates all the rules for each situation. Hint: The top 2 most chosen groups match up.</p>
+<p>The function checks all unordered ways n people can play rock paper scissors, then generates all the rules for each situation. Hint: The top 2 most chosen groups match up.</p>
 </div>
 <div>
 <h1>Yellowstone Permutation Generator</h1>
@@ -753,7 +755,7 @@ return count;
 <p>The function is self explanatory, it filters a list of positive integers by how many factors it has. Notice how the input 2 produces primes.</p>
 </div>
 <div>
-<h1>Averaged Digits Sorter</h1>
+<h1>Average Digits Sorter</h1>
 <textarea readonly=true>console.clear(); avgdigits(10000);
 function avgdigits(n) {
 ar = Array.from({length: n}, (_, i) => i + 1);
@@ -803,7 +805,7 @@ ar.push(i + "\u0009" + r.join(", "));
 }
 console.log(ar.join("\n"));
 }</textarea><br>
-<p>The function says if a number is odd, 3n + 1. If it's even, n/2. So far we seem to always reach 1. But do we ALWAYS? This is a famous unsolved math puzzle.</p>
+<p>The function says if a number is odd, 3n + 1. If it's even, n/2. So far, we seem to always reach 1. But do we ALWAYS? This is a famous unsolved math puzzle.</p>
 </div>
 <div>
 <h1>Team Elimination Simulator</h1>
