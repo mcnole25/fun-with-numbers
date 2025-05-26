@@ -27,6 +27,14 @@ I made a big tool composed of smaller tools! Now you can have fun with the Javas
 
 You can download this file or view it online to start browsing through all the tools.
 
+Version history:
+
+19 May 2025 - Development of this tool begins.
+
+v20250525 - Initial release.
+
+v20250526 - Fixed spelling errors, polished some descriptions & functions.
+
 # Files
 
 ### 0 to 1
