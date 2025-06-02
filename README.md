@@ -27,6 +27,12 @@ I made a big tool composed of smaller tools! Now you can have fun with the Javas
 
 You can download this file or view it online to start browsing through all the tools.
 
+### HTML File: 100-functions.html
+
+A comprehensive list of all known math operations & functions. Most of them originate form Desmos, but some I added in the "Miscellaneous Functions" section, to make the count 100.
+
+For any functions you don't understand, you can refer to their definitions online.
+
 Version history:
 
 19 May 2025 - Development of this tool begins.
