@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html><head>
+<title>100 Operations & Functions</title>
+<style>
+body {
+background-color: #222;
+color: #fff;
+font-size: 16px;
+font-family: arial;
+text-align: center;
+height: 0vh;
+}
+.container {
+display: grid;
+grid-template-columns: repeat(8, 1fr);
+border: 1px solid;
+position: relative;
+bottom: 80px;
+}
+sup {
+vertical-align: top;
+position: relative;
+top: -0.5em;
+}
+h1, p {
+height: 20px;
+line-height: 20px;
+}
+h1 {
+font-size: 28px;
+}
+.title {
+margin: 50px;
+position: relative;
+bottom: 40px;
+}
+.formula {
+font-family: "times new roman";
+}
+</style>
+</head>
+<body>
+<h1 class="title">BASIC MATH</h1>
+<div class="container">
+<div>
+<h1>x + y</h1>
+<p>Addition</p>
+</div>
+<div>
+<h1>x - y</h1>
+<p>Subtraction</p>
+</div>
+<div>
+<h1>x * y</h1>
+<p>Multiplication</p>
+</div>
+<div>
+<h1><sup>x</sup>&#8260;<sub>y</sub></h1>
+<p>Division</p>
+</div>
+<div>
+<h1>x<sup>y</sup></h1>
+<p>Exponents</p>
+</div>
+<div>
+<h1>&#8730;(x)</h1>
+<p>Square Roots</p>
+</div>
+<div>
+<h1><sup>y</sup>&#8730;(x)</h1>
+<p>nth Roots</p>
+</div>
+<div>
+<h1>x% of y</h1>
+<p>Percentages</p>
+</div>
+</div>
+<h1 class="title">ADVANCED MATH</h1>
+<div class="container">
+<div>
+<h1>(x, y)</h1>
+<p>Coordinate</p>
+</div>
+<div>
+<h1>|x|</h1>
+<p>Absolute Value</p>
+</div>
+<div>
+<h1>x!</h1>
+<p>Factorial</p>
+</div>
+<div>
+<h1>exp(x)</h1>
+<p>Natural Exponent</p>
+</div>
+<div>
+<h1>ln(x)</h1>
+<p>Natural Logarithm</p>
+</div>
+<div>
+<h1>log<sub>y</sub>(x)</h1>
+<p>Logarithm Base</p>
+</div>
+<div>
+<h1>f'(x)</h1>
+<p>Derivative</p>
+</div>
+<div>
+<h1><sub>a</sub>&#8747;<sup>b</sup>f(x)dx</h1>
+<p>Integral</p>
+</div>
+<div>
+<h1>&#931;f(n)</h1>
+<p>Sum</p>
+</div>
+<div>
+<h1>&#928;f(n)</h1>
+<p>Product</p>
+</div>
+<div>
+<h1>midpoint(C<sub>1</sub>, C<sub>2</sub>)</h1>
+<p>Coordinate Midpoint</p>
+</div>
+<div>
+<h1>distance(C<sub>1</sub>, C<sub>2</sub>)</h1>
+<p>Coordinate Distance</p>
+</div>
+</div>
+<h1 class="title">TRIGONOMETRY</h1>
+<div class="container">
+<div>
+<h1>sin(x)</h1>
+<p>Sine</p>
+</div>
+<div>
+<h1>cos(x)</h1>
+<p>Cosine</p>
+</div>
+<div>
+<h1>tan(x)</h1>
+<p>Tangent</p>
+</div>
+<div>
+<h1>csc(x)</h1>
+<p>Cosecant</p>
+</div>
+<div>
+<h1>sec(x)</h1>
+<p>Secant</p>
+</div>
+<div>
+<h1>cot(x)</h1>
+<p>Cotangent</p>
+</div>
+<div>
+<h1>arcsin(x)</h1>
+<p>Arcsine</p>
+</div>
+<div>
+<h1>arccos(x)</h1>
+<p>Arccosine</p>
+</div>
+<div>
+<h1>arctan(x)</h1>
+<p>Arctangent</p>
+</div>
+<div>
+<h1>arccsc(x)</h1>
+<p>Arccosecant</p>
+</div>
+<div>
+<h1>arcsec(x)</h1>
+<p>Arcsecant</p>
+</div>
+<div>
+<h1>arccot(x)</h1>
+<p>Arccotangent</p>
+</div>
+<div>
+<h1>sinh(x)</h1>
+<p>Hyperbolic Sine</p>
+</div>
+<div>
+<h1>cosh(x)</h1>
+<p>Hyperbolic Cosine</p>
+</div>
+<div>
+<h1>tanh(x)</h1>
+<p>Hyperbolic Tangent</p>
+</div>
+<div>
+<h1>csch(x)</h1>
+<p>Hyperbolic Cosecant</p>
+</div>
+<div>
+<h1>sech(x)</h1>
+<p>Hyperbolic Secant</p>
+</div>
+<div>
+<h1>coth(x)</h1>
+<p>Hyperbolic Cotangent</p>
+</div>
+<div>
+<h1>arcsinh(x)</h1>
+<p>Hyperbolic Arcsine</p>
+</div>
+<div>
+<h1>arccosh(x)</h1>
+<p>Hyperbolic Arccosine</p>
+</div>
+<div>
+<h1>arctanh(x)</h1>
+<p>Hyperbolic Arctangent</p>
+</div>
+<div>
+<h1>arccsch(x)</h1>
+<p>Hyperbolic Arccosecant</p>
+</div>
+<div>
+<h1>arcsech(x)</h1>
+<p>Hyperbolic Arcsecant</p>
+</div>
+<div>
+<h1>arccoth(x)</h1>
+<p>Hyperbolic Arccotangent</p>
+</div>
+</div>
+<h1 class="title">STATISTICS</h1>
+<div class="container">
+<div>
+<h1>mean(l)</h1>
+<p>Mean</p>
+</div>
+<div>
+<h1>median(l)</h1>
+<p>Median</p>
+</div>
+<div>
+<h1>min(l)</h1>
+<p>Minimum</p>
+</div>
+<div>
+<h1>max(l)</h1>
+<p>Maximum</p>
+</div>
+<div>
+<h1>quartile(l, n)</h1>
+<p>nth Quartile</p>
+</div>
+<div>
+<h1>quantile(l, x)</h1>
+<p>Decimal Quantile</p>
+</div>
+<div>
+<h1>stdev(l)</h1>
+<p>Sample Standard Deviation</p>
+</div>
+<div>
+<h1>stdevp(l)</h1>
+<p>Population Standard Deviation</p>
+</div>
+<div>
+<h1>var(l)</h1>
+<p>Sample Variance</p>
+</div>
+<div>
+<h1>varp(l)</h1>
+<p>Population Variance</p>
+</div>
+<div>
+<h1>mad(l)</h1>
+<p>Mean Absolute Deviation</p>
+</div>
+<div>
+<h1>cov(l<sub>1</sub>, l<sub>2</sub>)</h1>
+<p>Sample Covariance</p>
+</div>
+<div>
+<h1>covp(l<sub>1</sub>, l<sub>2</sub>)</h1>
+<p>Population Covariance</p>
+</div>
+<div>
+<h1>corr(l<sub>1</sub>, l<sub>2</sub>)</h1>
+<p>Pearson Correlation</p>
+</div>
+<div>
+<h1>spearman(l<sub>1</sub>, l<sub>2</sub>)</h1>
+<p>Spearman Correlation</p>
+</div>
+<div>
+<h1>stats(l)</h1>
+<p>Quartile Stats</p>
+</div>
+<div>
+<h1>count(l)</h1>
+<p>Count</p>
+</div>
+<div>
+<h1>total(l)</h1>
+<p>Total</p>
+</div>
+</div>
+<h1 class="title">LIST OPERATIONS</h1>
+<div class="container">
+<div>
+<h1>join(l<sub>1</sub>, l<sub>2</sub>)</h1>
+<p>Join Lists</p>
+</div>
+<div>
+<h1>sort(l)</h1>
+<p>Sort List</p>
+</div>
+<div>
+<h1>shuffle(l)</h1>
+<p>Shuffle List</p>
+</div>
+<div>
+<h1>unique(l)</h1>
+<p>Unique Elements</p>
+</div>
+</div>
+<h1 class="title">DISTRIBUTIONS</h1>
+<div class="container">
+<div>
+<h1>normaldist(x, y)</h1>
+<p>Normal Distribution</p>
+</div>
+<div>
+<h1>tdist(x, y, z)</h1>
+<p>T Distribution</p>
+</div>
+<div>
+<h1>poissondist(x)</h1>
+<p>Poisson Distribution</p>
+</div>
+<div>
+<h1>binomialdist(x, y)</h1>
+<p>Binomial Distribution</p>
+</div>
+<div>
+<h1>uniformdist(x, y)</h1>
+<p>Uniform Distribution</p>
+</div>
+<div>
+<h1>pdf(D, x)</h1>
+<p>Probability Density Function</p>
+</div>
+<div>
+<h1>cdf(D, x)</h1>
+<p>Cumulative Distribution Function</p>
+</div>
+<div>
+<h1>random(n)</h1>
+<p>Random List</p>
+</div>
+</div>
+<h1 class="title">NUMBER THEORY</h1>
+<div class="container">
+<div>
+<h1>lcm(n, m)</h1>
+<p>Least Common Multiple</p>
+</div>
+<div>
+<h1>gcf(n, m)</h1>
+<p>Greatest Common Factor</p>
+</div>
+<div>
+<h1>mod(x, y)</h1>
+<p>Modulo</p>
+</div>
+<div>
+<h1>floor(x)</h1>
+<p>Floor</p>
+</div>
+<div>
+<h1>ceil(x)</h1>
+<p>Ceiling</p>
+</div>
+<div>
+<h1>round(x, n)</h1>
+<p>Round Decimal Places</p>
+</div>
+<div>
+<h1>sign(x)</h1>
+<p>Sign</p>
+</div>
+<div>
+<h1>nPr(x, y)</h1>
+<p>Permutations</p>
+</div>
+<div>
+<h1>nCr(x, y)</h1>
+<p>Combinations</p>
+</div>
+</div>
+<h1 class="title">COMPLEX NUMBERS</h1>
+<div class="container">
+<div>
+<h1>real(c)</h1>
+<p>Real Part</p>
+</div>
+<div>
+<h1>imag(c)</h1>
+<p>Imaginary Part</p>
+</div>
+<div>
+<h1>conj(c)</h1>
+<p>Conjugate</p>
+</div>
+<div>
+<h1>arg(c)</h1>
+<p>Argument</p>
+</div>
+</div>
+<h1 class="title">MISCELLANEOUS FUNCTIONS</h1>
+<div class="container">
+<div>
+<h1>tri(x)</h1>
+<p>Triangular Sequence</p>
+<p class="formula">Formula: 0.5x(x + 1)</p>
+</div>
+<div>
+<h1>fib(n)</h1>
+<p>Fibonacci Sequence</p>
+<p class="formula">Formula: fib(n - 1) + fib(n - 2)</p>
+</div>
+<div>
+<h1>catalan(x)</h1>
+<p>Catalan Sequence</p>
+<p class="formula">Formula: <sup>1</sup>&#8260;<sub>x + 1</sub> * nCr(2x, x)</p>
+</div>
+<div>
+<h1>digits(x, y)</h1>
+<p>Digit Count of x<sup>y</sup></p>
+<p class="formula">Formula: floor(log<sub>10</sub>(x) * y) + 1</p>
+</div>
+<div>
+<h1>!x</h1>
+<p>Derangements</p>
+<p class="formula">Formula: round(<sup>x!</sup>&#8260;<sub>e</sub>)</p>
+</div>
+<div>
+<h1>&#963;(x)</h1>
+<p>Sigmoid Function</p>
+<p class="formula">Formula: <sup>1</sup>&#8260;<sub>1 + e<sup>-x</sup></sub></p>
+</div>
+<div>
+<h1>invsig(x)</h1>
+<p>Inverse Sigmoid Function</p>
+<p class="formula">Formula: -ln(<sup>1</sup>&#8260;<sub>x</sub> - 1)</p>
+</div>
+<div>
+<h1>combrep(x, y)</h1>
+<p>Combinations with Repeats</p>
+<p class="formula">Formula: nCr(x + y - 1, y)</p>
+</div>
+<div>
+<h1>isPrime(n)</h1>
+<p>Is Prime Number</p>
+</div>
+<div>
+<h1>PrimePi(n)</h1>
+<p>Count of Primes</p>
+</div>
+<div>
+<h1>p<sub>n</sub>#</h1>
+<p>Primorial</p>
+</div>
+<div>
+<h1>totient(n)</h1>
+<p>Euler Totient</p>
+</div>
+<div>
+<h1>W(x)</h1>
+<p>Lambert W Function</p>
+</div>
+</div>
+</body></html>
