@@ -35,7 +35,7 @@ width: 80vw;
 <body>
 <h1>mcnole25's Mini Console Tools</h1>
 <h1>A big tool made of small quirky tools!</h1>
-<p id="desc">I made a collection of 40 Javascript functions to generate lists of data & numbers. Your built in browser's console is used to show the outputs.<br>All these functions were developed & tested by me. Copy & paste any of them, then open the console to try it out.<br>If you spot an overlooked error or performance issue, please notify me on Github right away, as I aim to provide information as accurate as possible.<br>I may not respond to all issues reported, as I'm not active on Github much, but when I'm around, I'll ensure to review & fix any issue.</p>
+<p id="desc">I made a collection of 41 Javascript functions to generate lists of data & numbers. Your built in browser's console is used to show the outputs.<br>All these functions were developed & tested by me. Copy & paste any of them, then open the console to try it out.<br>If you spot an overlooked error or performance issue, please notify me on Github right away, as I aim to provide information as accurate as possible.<br>I may not respond to all issues reported, as I'm not active on Github much, but when I'm around, I'll ensure to review & fix any issue.</p>
 <div id="container">
 <div>
 <h1>Prime Number Generator</h1>
@@ -364,7 +364,7 @@ for (i = 1; i <= l; i++) {func.push(((f != 1 && i == 1) ? f + " * " : "") + "F(n
 if (o != 0) {func.push(o);}
 console.log("F(n) = " + func.join(" + ").replace(/\+ -/g, "- ") + "\n" + ar.join(", "));
 }</textarea><br>
-<p>The function creates a custom Fibonacci sequence with a term limit, a last term factor, a number of last terms to add, & a final offset addition. Can generate Pell, Tribonacci, 3 way Fibonacci, etc.</p>
+<p>The function creates a general Fibonacci sequence with a term limit, a last term factor, a number of last terms to add, & a final offset addition. Can generate Pell, Fibonacci order 3, Tribonacci, etc.</p>
 </div>
 <div>
 <h1>Factored Square Root Generator</h1>
@@ -860,6 +860,210 @@ ar.sort((a, b) => a.split(" = ")[0] - b.split(" = ")[0]);
 console.log(ar.join("\n"));
 }</textarea><br>
 <p>The function uses powers of 3 to generate a list of additions & subtractions corresponding to each integer. The input uses exponential space, so keep your values low.</p>
+</div>
+<div>
+<h1>Number Properties Lister</h1>
+<textarea readonly=true>console.clear(); numbers(100);
+function numbers(n) {
+ar = [];
+s0 = primes(n);
+s1 = []; nn = 0; ii = 0;
+while (ii <= n) {
+ii = (nn * (nn + 1))/2;
+s1.push(ii); nn++;
+}
+s2 = []; nn = 0; ii = 0;
+while (ii <= n) {
+ii = nn**2;
+s2.push(ii); nn++;
+}
+s3 = []; nn = 0; ii = 0;
+while (ii <= n) {
+ii = (nn * (3 * nn - 1))/2;
+s3.push(ii); nn++;
+}
+s4 = []; nn = 0; ii = 0;
+while (ii <= n) {
+ii = nn * (2 * nn - 1);
+s4.push(ii); nn++;
+}
+s5 = []; nn = 0; ii = 0;
+while (ii <= n) {
+ii = (3 * nn**2 + 3 * nn + 2)/2;
+s5.push(ii); nn++;
+}
+s6 = []; nn = 0; ii = 0;
+while (ii <= n) {
+ii = nn**2 + (nn - 1)**2;
+s6.push(ii); nn++;
+}
+s7 = []; nn = 0; ii = 0;
+while (ii <= n) {
+ii = (5 * nn**2 - 5 * nn + 2)/2;
+s7.push(ii); nn++;
+}
+s8 = []; nn = 0; ii = 0;
+while (ii <= n) {
+ii = 1 + 3 * nn * (nn + 1);
+s8.push(ii); nn++;
+}
+s9 = []; nn = 0; ii = 0;
+while (ii <= n) {
+ii = nn**3;
+s9.push(ii); nn++;
+}
+s10 = []; nn = 0; ii = 0;
+while (ii <= n) {
+ii = nn**5;
+s10.push(ii); nn++;
+}
+s11 = []; nn = 0; ii = 0;
+while (ii <= n) {
+ii = 2**nn;
+s11.push(ii); nn++;
+}
+s12 = []; nn = 0; ii = 0;
+while (ii <= n) {
+ii = 3**nn;
+s12.push(ii); nn++;
+}
+s13 = []; nn = 0; ii = 0;
+while (ii <= n) {
+ii = 5**nn;
+s13.push(ii); nn++;
+}
+s14 = []; nn = 0; ii = 0;
+while (ii <= n) {
+ii = 60 * nn;
+s14.push(ii); nn++;
+}
+s15 = []; nn = 0; ii = 0;
+while (ii <= n) {
+ii = 24 * nn;
+s15.push(ii); nn++;
+}
+s16 = []; nn = 0; ii = 0;
+while (ii <= n) {
+ii = 7 * nn;
+s16.push(ii); nn++;
+}
+s17 = [0, 1]; nn = 0; ii = 0;
+while (ii <= n) {
+ii = Number(s17[s17.length - 1]) + Number(s17[s17.length - 2]);
+s17.push(ii);
+}
+s18 = [2, 1]; nn = 0; ii = 0;
+while (ii <= n) {
+ii = Number(s18[s18.length - 1]) + Number(s18[s18.length - 2]);
+s18.push(ii);
+}
+s19 = [0, 1]; nn = 0; ii = 0;
+while (ii <= n) {
+ii = Number(2 * s19[s19.length - 1]) + Number(s19[s19.length - 2]);
+s19.push(ii);
+}
+s20 = [0, 0, 1]; nn = 0; ii = 0;
+while (ii <= n) {
+ii = Number(s20[s20.length - 1]) + Number(s20[s20.length - 2]) + Number(s20[s20.length - 3]);
+s20.push(ii);
+}
+s21 = []; nn = 0; ii = 0;
+while (ii <= n) {
+ii = 6 * nn * (nn - 1) + 1;
+s21.push(ii); nn++;
+}
+s22 = []; nn = 0; ii = 0;
+while (ii <= n) {
+ii = (nn * (nn + 1) * (nn + 2))/6;
+s22.push(ii); nn++;
+}
+s23 = []; nn = 0; ii = 0;
+while (ii <= n) {
+ii = (nn * (nn + 1) * (2 * nn + 1))/6;
+s23.push(ii); nn++;
+}
+s24 = []; nn = 1; ii = 1;
+while (ii <= n) {
+ii *= nn;
+s24.push(ii); nn++;
+}
+const checkSemiprime = num => {
+let cnt = 0;
+for (let it = 2; cnt < 2 && it * it <= num; ++it){
+while (num % it == 0) {
+num /= it, ++cnt;
+}}
+if (num > 1) {
+++cnt;
+}
+return cnt === 2;
+}
+for (i = 1; i <= n; i++) {
+p = [];
+if (s0.includes(i)) {p.push("Prime");}
+if (s1.includes(i)) {p.push("Triangular");}
+if (s2.includes(i)) {p.push("Square");}
+if (s3.includes(i)) {p.push("Pentagonal");}
+if (s4.includes(i)) {p.push("Hexagonal");}
+if (s5.includes(i)) {p.push("Centered Triangular");}
+if (s6.includes(i)) {p.push("Centered Square");}
+if (s7.includes(i)) {p.push("Centered Pentagonal");}
+if (s8.includes(i)) {p.push("Hex");}
+if (s9.includes(i)) {p.push("Cube");}
+if (s10.includes(i)) {p.push("5th Power");}
+if (s11.includes(i)) {p.push("Power of 2");}
+if (s12.includes(i)) {p.push("Power of 3");}
+if (s13.includes(i)) {p.push("Power of 5");}
+if (s14.includes(i)) {p.push("Exact Hour");}
+if (s15.includes(i)) {p.push("Exact Day");}
+if (s16.includes(i)) {p.push("Exact Week");}
+if (s17.includes(i)) {p.push("Fibonacci");}
+if (s18.includes(i)) {p.push("Lucas");}
+if (s19.includes(i)) {p.push("Pell");}
+if (s20.includes(i)) {p.push("Tribonacci");}
+if (s21.includes(i)) {p.push("Star");}
+if (s22.includes(i)) {p.push("Tetrahedral");}
+if (s23.includes(i)) {p.push("Pyramid");}
+if (s24.includes(i)) {p.push("Factorial");}
+if (checkSemiprime(i)) {p.push("Semiprime");}
+if (isAbundantNumber(i)) {p.push("Abundant");}
+if (hasSixFactors(i)) {p.push("6 Factors");}
+if (String(i) == String(i).split("").reverse().join("")) {p.push("Palindrome");}
+if (i == 1) {p = ["Almost Everything"];}
+ar.push(i + "\u0009" + p.sort().join(", "));
+}
+console.log(ar.join("\n"));
+}
+function primes(oo) {
+arar = [2];
+for (o = 2; o <= oo; o++) {
+pp = true;
+for (f = 2; f <= Math.ceil(Math.sqrt(o)); f++) {
+pp = pp && (o % f != 0);
+}
+if (pp) {arar.push(o);}}
+return arar;
+}
+function isAbundantNumber(numq) {
+if (numq < 1) return false;
+let sum = 0;
+for (let iq = 1; iq <= Math.floor(numq / 2); iq++) {
+if (numq % iq === 0) {
+sum += iq;
+}}
+return sum > numq;
+}
+function hasSixFactors(numt) {
+let factorCount = 0;
+for (let ir = 1; ir <= Math.sqrt(numt); ir++) {
+if (numt % ir === 0) {
+factorCount += (ir === numt / ir) ? 1 : 2;
+}
+if (factorCount > 6) return false;
+}
+return factorCount === 6;
+}</textarea><br>
+<p>The function lists positive integers & notes many properties they have, like being prime, square, Fibonacci, centered square, Tribonacci (sum of 3 last terms), etc.</p>
 </div>
 </div>
 </body></html>
