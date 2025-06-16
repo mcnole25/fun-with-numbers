@@ -35,7 +35,7 @@ width: 80vw;
 <body>
 <h1>mcnole25's Mini Console Tools</h1>
 <h1>A big tool made of small quirky tools!</h1>
-<p id="desc">I made a collection of 41 Javascript functions to generate lists of data & numbers. Your built in browser's console is used to show the outputs.<br>All these functions were developed & tested by me. Copy & paste any of them, then open the console to try it out.<br>If you spot an overlooked error or performance issue, please notify me on Github right away, as I aim to provide information as accurate as possible.<br>I may not respond to all issues reported, as I'm not active on Github much, but when I'm around, I'll ensure to review & fix any issue.</p>
+<p id="desc">I made a collection of 42 Javascript functions to generate lists of data & numbers. Your built in browser's console is used to show the outputs.<br>All these functions were developed & tested by me. Copy & paste any of them, then open the console to try it out.<br>If you spot an overlooked error or performance issue, please notify me on Github right away, as I aim to provide information as accurate as possible.<br>I may not respond to all issues reported, as I'm not active on Github much, but when I'm around, I'll ensure to review & fix any issue.</p>
 <div id="container">
 <div>
 <h1>Prime Number Generator</h1>
@@ -53,20 +53,29 @@ console.log(ar.join(", "));
 <p>The function takes an input, then generates a list of prime numbers by checking each number for factors.</p>
 </div>
 <div>
-<h1>3 Way Partition Generator</h1>
-<textarea readonly=true>console.clear(); partition(10);
-function partition(n) {
-ar = [];
-for (j = 0; j <= n; j++) {
-for (i = 0; i <= j; i++) {
-ii = j - i; iii = n - j;
-if (i <= ii && ii <= iii && i * ii * iii > 0) {
-ar.push(iii + " + " + ii + " + " + i);
-}}}
+<h1>Partition into K Parts Generator</h1>
+<textarea readonly=true>console.clear(); partition(60, 4);
+function partition(nn, kk) {
+ar = pn(nn, kk);
 console.log(ar.length);
 console.log(ar.join("\n"));
+}
+function pn(n, k) {
+function helper(n, k, max, current, result) {
+if (k === 0) {
+if (n === 0) result.push([...current].join(" + "));
+return;
+}
+for (let i = Math.min(max, n); i >= 1; i--) {
+current.push(i);
+helper(n - i, k - 1, i, current, result);
+current.pop();
+}}
+let result = [];
+helper(n, k, n, [], result);
+return result;
 }</textarea><br>
-<p>The function goes through all possible ways to add 3 positive integers to reach the desired input.</p>
+<p>The function splits up n in all possible ways, into k unordered positive integers.</p>
 </div>
 <div>
 <h1>Math Table Generator</h1>
@@ -1064,6 +1073,29 @@ if (factorCount > 6) return false;
 return factorCount === 6;
 }</textarea><br>
 <p>The function lists positive integers & notes many properties they have, like being prime, square, Fibonacci, centered square, Tribonacci (sum of 3 last terms), etc.</p>
+</div>
+<div>
+<h1>2 Team Combinations Generator</h1>
+<textarea readonly=true>console.clear(); twoteams(4);
+function twoteams(n) {
+ar = [];
+for (i = 0; i < 4**n/2; i++) {
+b = i.toString(2);
+b = "0".repeat(2 * n - String(b).length) + String(b);
+t1 = []; t2 = [];
+for (j = 1; j <= 2 * n; j++) {
+if (b.charAt(j - 1) == 1) {
+t2.push(j);
+} else {
+t1.push(j);
+}}
+if (t1.length == t2.length) {
+ar.push(t1.join(", ") + " vs " + t2.join(", "));
+}}
+console.log(ar.length);
+console.log(ar.join("\n"));
+}</textarea><br>
+<p>The function finds all possible ways to split 2n people into 2 teams with n people each. The order doesn't matter for the teams or numbers.</p>
 </div>
 </div>
 </body></html>
