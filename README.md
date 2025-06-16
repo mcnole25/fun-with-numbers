@@ -37,6 +37,8 @@ v20250526 - Fixed spelling errors, polished some descriptions & functions.
 
 v20250611 - Added new "Number Properties Lister" tool.
 
+v20250615 - Updated the "Partitions" to be more general, added new "2 Team Combinations".
+
 ### HTML File: 100-functions.html
 
 A comprehensive list of all known math operations & functions. Most of them originate form Desmos, but some I added in the "Miscellaneous Functions" section, to make the count 100.
