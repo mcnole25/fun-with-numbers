@@ -35,7 +35,7 @@ width: 80vw;
 <body>
 <h1>mcnole25's Mini Console Tools</h1>
 <h1>A big tool made of small quirky tools!</h1>
-<p id="desc">I made a collection of 42 Javascript functions to generate lists of data & numbers. Your built in browser's console is used to show the outputs.<br>All these functions were developed & tested by me. Copy & paste any of them, then open the console to try it out.<br>If you spot an overlooked error or performance issue, please notify me on Github right away, as I aim to provide information as accurate as possible.<br>I may not respond to all issues reported, as I'm not active on Github much, but when I'm around, I'll ensure to review & fix any issue.</p>
+<p id="desc">I made a collection of 44 Javascript functions to generate lists of data & numbers. Your built in browser's console is used to show the outputs.<br>All these functions were developed & tested by me. Copy & paste any of them, then open the console to try it out.<br>If you spot an overlooked error or performance issue, please notify me on Github right away, as I aim to provide information as accurate as possible.<br>I may not respond to all issues reported, as I'm not active on Github much, but when I'm around, I'll ensure to review & fix any issue.</p>
 <div id="container">
 <div>
 <h1>Prime Number Generator</h1>
@@ -190,7 +190,7 @@ console.log(ar.join("\n"));
 <p>The function sets up a table with all 10 digits counted at 0, then counts up from n**1 to n**k. Which digit will win?</p>
 </div>
 <div>
-<h1>Expression Generator</h1>
+<h1>Expression Generator v1</h1>
 <textarea readonly=true>console.clear(); expressions(0, 12);
 function expressions(n, l) {
 ar = []; m = []; p = [];
@@ -702,7 +702,7 @@ console.log(ar.join("\n"));
 <p>The function checks through all years from 1583-9999, then generates palindromic dates, with reversed years corresponding to a (DD/MM/YYYY) date.</p>
 </div>
 <div>
-<h1>All Arithmetic Combinations Generator</h1>
+<h1>Arithmetic Combinations Generator</h1>
 <textarea readonly=true>console.clear(); allarithmetic(4);
 function allarithmetic(n) {
 ar = []; n--;
@@ -1096,6 +1096,50 @@ console.log(ar.length);
 console.log(ar.join("\n"));
 }</textarea><br>
 <p>The function finds all possible ways to split 2n people into 2 teams with n people each. The order doesn't matter for the teams or numbers.</p>
+</div>
+<div>
+<h1>Expression Generator v2</h1>
+<textarea readonly=true>console.clear(); expressions(60);
+function expressions(n) {
+ar = [];
+for (k = 1; k <= n; k++) {
+for (i = 2; i <= n; i++) {
+for (j = 2; j <= i; j++) {
+if (((i * j) + k) == n) {
+ar.push(i + " * " + j + " + " + k);
+}}}}
+for (k = 2; k <= n; k++) {
+for (i = 1; i <= n; i++) {
+for (j = 1; j <= i; j++) {
+if (((i + j) * k) == n) {
+ar.push("(" + i + " + " + j + ") * " + k);
+}}}}
+console.log(ar.length);
+console.log(ar.join("\n"));
+}</textarea><br>
+<p>The function calculates all possible 3 way add/multiply expressions that equal the given input. Also supports the order of operations.</p>
+</div>
+<div>
+<h1>Quadratic Equation Generator</h1>
+<textarea readonly=true>console.clear(); quadratics(20);
+function quadratics(n) {
+ar = [];
+for (i = 1; i <= n; i++) {
+for (j = -n; j <= n; j++) {
+for (k = -n; k <= n; k++) {
+q = i + "x\u00b2 + " + j + "x + " + k;
+q = q.replace(/\+ -/g, "- ");
+q = q.replace(/ \+ 0x/g, "").replace(/ \+ 0/g, "");
+q = q.replace(/\+ 1x/g, "+ x").replace(/- 1x/g, "- x");
+if (i == 1) {q = q.replace(/1x\u00b2/g, "x\u00b2");}
+r1 = (-j - Math.sqrt(j**2 - 4 * i * k))/(2 * i);
+r2 = (-j + Math.sqrt(j**2 - 4 * i * k))/(2 * i);
+if (r1 == Math.round(r1) && r2 == Math.round(r2)) {
+ar.push(q + " = 0" + " ".repeat(25 - q.length) + "x = " + r1 + " or " + r2);
+}}}}
+console.log(ar.join("\n"));
+}</textarea><br>
+<p>The function uses all possible quadratic equations with integer roots, then uses the quadratic formula to calculate those roots.</p>
 </div>
 </div>
 </body></html>
