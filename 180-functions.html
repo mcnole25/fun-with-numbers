@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html><head>
-<title>150 Operations & Functions</title>
+<title>180 Operations & Functions</title>
 <style>
 body {
 background-color: #222;
@@ -36,6 +36,12 @@ bottom: 40px;
 }
 .formula {
 font-family: "times new roman";
+}
+.backward {
+display: inline-block;
+-moz-transform: scale(-1, 1);
+-webkit-transform: scale(-1, 1);
+transform: scale(-1, 1);
 }
 </style>
 </head>
@@ -512,6 +518,16 @@ font-family: "times new roman";
 <p>Radians to Degrees</p>
 <p class="formula">Formula: <sup>180</sup>&#8260;<sub>&pi;</sub></p>
 </div>
+<div>
+<h1>c</h1>
+<p>Speed of Light</p>
+<p class="formula">Formula: 299792458 m/s</p>
+</div>
+<div>
+<h1>g</h1>
+<p>Gravity on Earth</p>
+<p class="formula">Formula: 9.80665 m/s<sup>2</sup></p>
+</div>
 </div>
 <h1 class="title">EXTENSION: SUPPLEMENTARY MATH</h1>
 <div class="container">
@@ -536,6 +552,10 @@ font-family: "times new roman";
 <p>Dollars*</p>
 </div>
 <div>
+<h1>-$x</h1>
+<p>Debt Amount*</p>
+</div>
+<div>
 <h1>m</h1>
 <p>Meter*</p>
 </div>
@@ -546,6 +566,48 @@ font-family: "times new roman";
 <div>
 <h1>s</h1>
 <p>Second*</p>
+</div>
+<div>
+<h1>K</h1>
+<p>Kelvin*</p>
+</div>
+<div>
+<h1>x+</h1>
+<p>X or More*</p>
+</div>
+<div>
+<h1>&le;x</h1>
+<p>X or Less*</p>
+</div>
+<div>
+<h1>&gt;x</h1>
+<p>Greater than X*</p>
+</div>
+<div>
+<h1>&lt;x</h1>
+<p>Less than X*</p>
+</div>
+<div>
+<h1>x%</h1>
+<p>Isolated Percentage</p>
+<p class="formula">Formula: 0.01x</p>
+</div>
+<div>
+<h1>~x</h1>
+<p>Value with Unknown Error*</p>
+</div>
+<div>
+<h1>x &pm; y</h1>
+<p>Value with Known Error*</p>
+</div>
+<div>
+<h1>xE+n</h1>
+<p>Scientific Notation</p>
+<p class="formula">Formula: x * 10<sup>n</sup></p>
+</div>
+<div>
+<h1>No. n</h1>
+<p>Numerical Rank*</p>
 </div>
 </div>
 <h1 class="title">EXTENSION: BINARY</h1>
@@ -622,24 +684,36 @@ font-family: "times new roman";
 <p>Cardinality*</p>
 </div>
 <div>
-<h1>N<sup>+</sup></h1>
+<h1>&#8469;<sup>+</sup></h1>
 <p>Set of Positive Integers*</p>
 </div>
 <div>
-<h1>N</h1>
+<h1>&#8469;</h1>
 <p>Set of Nonnegative Integers*</p>
 </div>
 <div>
-<h1>Z</h1>
+<h1>&#8484;</h1>
 <p>Set of Integers*</p>
 </div>
 <div>
-<h1>Q</h1>
+<h1>&#8474;</h1>
 <p>Set of Rationals*</p>
 </div>
 <div>
-<h1>R</h1>
+<h1>&#8477;</h1>
 <p>Set of Reals*</p>
+</div>
+<div>
+<h1>A &#8710; B</h1>
+<p>Symmetric Difference*</p>
+</div>
+<div>
+<h1>&#120140;</h1>
+<p>Universal Set*</p>
+</div>
+<div>
+<h1>A&prime;</h1>
+<p>Set Complement*</p>
 </div>
 </div>
 <h1 class="title">EXTENSION: ROMAN NUMERALS</h1>
@@ -677,6 +751,41 @@ font-family: "times new roman";
 <p>1000's Multiplier*</p>
 </div>
 </div>
+<h1 class="title">EXTENSION: GOOGOLOGY</h1>
+<div class="container">
+<div>
+<h1>n!!</h1>
+<p>Double Factorial*</p>
+</div>
+<div>
+<h1>n!<sub>(m)</sub></h1>
+<p>m-tuple Factorial*</p>
+</div>
+<div>
+<h1>sf(n)</h1>
+<p>Superfactorial*</p>
+</div>
+<div>
+<h1>H(n)</h1>
+<p>Hyperfactorial*</p>
+</div>
+<div>
+<h1>ef(n)</h1>
+<p>Exponential Factorial*</p>
+</div>
+<div>
+<h1>n#</h1>
+<p>Primorial up to N*</p>
+</div>
+<div>
+<h1>x &uarr;&uarr; n</h1>
+<p>Tetration*</p>
+</div>
+<div>
+<h1>x &uarr;<sup>m</sup> n</h1>
+<p>mth Arrow Hyperoperation*</p>
+</div>
+</div>
 <h1 class="title">EXTENSION: OTHER</h1>
 <div class="container">
 <div>
@@ -692,8 +801,32 @@ font-family: "times new roman";
 <p>24 Hour Standard Time*</p>
 </div>
 <div>
-<h1>UTC&pm;x</h1>
+<h1>UTC+x</h1>
 <p>UTC Timezone*</p>
+</div>
+<div>
+<h1>y &#8733; x</h1>
+<p>Proportional*</p>
+</div>
+<div>
+<h1>y <span class="backward">&#8733;</span> x</h1>
+<p>Inversely Proportional*</p>
+</div>
+<div>
+<h1><sup>a</sup>&#8260;<sub>b</sub> &#8853; <sup>c</sup>&#8260;<sub>d</sub></h1>
+<p>Naive Fraction Sum*</p>
+</div>
+<div>
+<h1><sup>a</sup>&#8260;<sub>b</sub> &#8854; <sup>c</sup>&#8260;<sub>d</sub></h1>
+<p>Naive Fraction Difference*</p>
+</div>
+<div>
+<h1>l<sub>1</sub> &#9734; l<sub>2</sub></h1>
+<p>Convolution*</p>
+</div>
+<div>
+<h1>v<span style="position: relative; right: 7.5px;">&#8407;</span></h1>
+<p>Vector*</p>
 </div>
 </div>
 <div>* indicates that the function is not compatible with the Desmos Graphing Calculator.</div>
