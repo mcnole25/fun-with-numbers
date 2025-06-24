@@ -41,9 +41,11 @@ v20250615 - Updated the "Partitions" to be more general, added new "2 Team Combi
 
 v20250617 - New features: Expression generator v2, Quadratic generator.
 
-### HTML File: 100-functions.html
+### HTML File: 180-functions.html
 
-A comprehensive list of all known math operations & functions. Most of them originate form Desmos, but some I added in the "Miscellaneous Functions" section, to make the count 100.
+A comprehensive list of all known math operations & functions, including extended ones. Most of them originate form Desmos.
+
+For the extended notations, they cover all other aspects of math. Some notations are ones I made to avoid ambiguity.
 
 For any functions you don't understand, you can refer to their definitions online.
 
