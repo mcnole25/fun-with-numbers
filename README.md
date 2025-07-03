@@ -41,11 +41,13 @@ v20250615 - Updated the "Partitions" to be more general, added new "2 Team Combi
 
 v20250617 - New features: Expression generator v2, Quadratic generator.
 
-### HTML File: 180-functions.html
+v20250702 - New feature: Auto team count decider
 
-A comprehensive list of all known math operations & functions, including extended ones. Most of them originate form Desmos.
+### HTML File: all-notation.html
 
-For the extended notations, they cover all other aspects of math. Some notations are ones I made to avoid ambiguity.
+A comprehensive list of most known math operations & functions. Most of them originate from Desmos & other sources.
+
+There are over 100 pieces of notation to explore.
 
 For any functions you don't understand, you can refer to their definitions online.
 
