@@ -10,7 +10,7 @@ font-family: arial;
 text-align: center;
 }
 textarea {
-width: 20vw;
+width: 18vw;
 height: 40vh;
 font-size: 12px;
 font-family: consolas;
@@ -18,15 +18,15 @@ text-align: left;
 resize: none;
 }
 h1 {
-font-size: 24px;
+font-size: 20px;
 }
 p {
-width: 20vw;
+width: 18vw;
 display: inline-block;
 }
 #container {
 display: grid;
-grid-template-columns: repeat(4, 1fr);
+grid-template-columns: repeat(5, 1fr);
 }
 #desc {
 width: 80vw;
@@ -35,7 +35,7 @@ width: 80vw;
 <body>
 <h1>mcnole25's Mini Console Tools</h1>
 <h1>A big tool made of small quirky tools!</h1>
-<p id="desc">I made a collection of 44 Javascript functions to generate lists of data & numbers. Your built in browser's console is used to show the outputs.<br>All these functions were developed & tested by me. Copy & paste any of them, then open the console to try it out.<br>If you spot an overlooked error or performance issue, please notify me on Github right away, as I aim to provide information as accurate as possible.<br>I may not respond to all issues reported, as I'm not active on Github much, but when I'm around, I'll ensure to review & fix any issue.</p>
+<p id="desc">I made a collection of 45 Javascript functions to generate lists of data & numbers. Your built in browser's console is used to show the outputs.<br>All these functions were developed & tested by me. Copy & paste any of them, then open the console to try it out.<br>If you spot an overlooked error or performance issue, please notify me on Github right away, as I aim to provide information as accurate as possible.<br>I may not respond to all issues reported, as I'm not active on Github much, but when I'm around, I'll ensure to review & fix any issue.</p>
 <div id="container">
 <div>
 <h1>Prime Number Generator</h1>
@@ -1140,6 +1140,25 @@ ar.push(q + " = 0" + " ".repeat(25 - q.length) + "x = " + r1 + " or " + r2);
 console.log(ar.join("\n"));
 }</textarea><br>
 <p>The function uses all possible quadratic equations with integer roots, then uses the quadratic formula to calculate those roots.</p>
+</div>
+<div>
+<h1>Automatic Team Count Decider</h1>
+<textarea readonly=true>console.clear(); decideteams(60);
+function decideteams(n) {
+t = 0;
+for (i = Math.floor(Math.sqrt(n)); i >= 1; i--) {
+if (n % i == 0 && t == 0) {
+t = i;
+}}
+c = [];
+for (j = 0; j < t; j++) {c.push("\u2022".repeat(n/t));}
+c = c.join("\n");
+if (t == 1) {
+console.log(n + " (individual)\n\n" + c);
+} else {
+console.log(t + " teams of " + n/t + "\n" + "Merge: Final " + Math.round(n/3) + "\n\n" + c);
+}}</textarea><br>
+<p>The function is inspired by competition shows. It factors the number & finds the best team count for the cast size. Prime numbers mean individual competition.</p>
 </div>
 </div>
 </body></html>
