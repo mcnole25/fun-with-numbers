@@ -47,9 +47,7 @@ v20250702 - New feature: Auto team count decider
 
 A comprehensive list of most known math operations & functions. Most of them originate from Desmos & other sources.
 
-There are over 100 pieces of notation to explore.
-
-For any functions you don't understand, you can refer to their definitions online.
+There are 144 pieces of notation to explore. For any functions you don't understand, you can refer to their definitions online.
 
 # Files
 
