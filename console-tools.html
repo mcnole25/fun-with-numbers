@@ -1142,23 +1142,25 @@ console.log(ar.join("\n"));
 <p>The function uses all possible quadratic equations with integer roots, then uses the quadratic formula to calculate those roots.</p>
 </div>
 <div>
-<h1>Automatic Team Count Decider</h1>
-<textarea readonly=true>console.clear(); decideteams(60);
-function decideteams(n) {
-t = 0;
-for (i = Math.floor(Math.sqrt(n)); i >= 1; i--) {
-if (n % i == 0 && t == 0) {
-t = i;
-}}
-c = [];
-for (j = 0; j < t; j++) {c.push("\u2022".repeat(n/t));}
-c = c.join("\n");
-if (t == 1) {
-console.log(n + " (individual)\n\n" + c);
-} else {
-console.log(t + " teams of " + n/t + "\n" + "Merge: Final " + Math.round(n/3) + "\n\n" + c);
-}}</textarea><br>
-<p>The function is inspired by competition shows. It factors the number & finds the best team count for the cast size. Prime numbers mean individual competition.</p>
+<h1>Automatic Competition Decider</h1>
+<textarea readonly=true>console.clear(); decidecomp(40);
+function decidecomp(n) {
+m = Math.round(n/3); l = Math.round(n/20);
+c = n; e = 1;
+if (m < 1) {m = 1;} if (l < 1) {l = 1;}
+while (n > m) {
+n -= l; e += 1;
+}
+if (n < m) {n += l; e -= 1;}
+e += n - 1; t = 0; n = 0;
+for (i = Math.floor(Math.sqrt(c)); i >= 1; i--) {
+if (t == 0 && c % i == 0) {t = i;}
+}
+dia = [];
+for (i = 0; i < t; i++) {dia.push("\u2022 ".repeat(c/t).trim());}
+console.log("Cast size: " + c + ", Merge: " + m + "\nEliminations: " + l + ", Episode count: " + e + "\nTeams: " + t + " team(s) of " + c/t + "\n\n" + dia.join("\n"));
+}</textarea><br>
+<p>The function is inspired by competition/object shows. It factors the number & finds the best team count for the cast size. Prime numbers mean individual competition.</p>
 </div>
 </div>
 </body></html>
