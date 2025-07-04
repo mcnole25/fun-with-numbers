@@ -41,7 +41,9 @@ v20250615 - Updated the "Partitions" to be more general, added new "2 Team Combi
 
 v20250617 - New features: Expression generator v2, Quadratic generator.
 
-v20250702 - New feature: Auto team count decider
+v20250702 - New feature: Auto team count decider.
+
+v20250704 - Polished the team count decider feature a little bit.
 
 ### HTML File: all-notation.html
 
