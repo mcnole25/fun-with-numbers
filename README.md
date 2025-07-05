@@ -53,6 +53,14 @@ A comprehensive list of most known math operations & functions. Most of them ori
 
 There are 288 pieces of notation to explore. For any functions you don't understand, you can refer to their definitions online.
 
+### HTML File: 52-factorial.html
+
+This is a new tool I created to manipulate, perform operations & shuffle permutations of 52 items.
+
+The number 52 was chosen, because it's inspired by the 52 deck of cards.
+
+The number of possible permutations is `80658175170943878571660636856403766975289505440883277824000000000000`, which is a very large, but finite number!
+
 # Files
 
 ### 0 to 1
