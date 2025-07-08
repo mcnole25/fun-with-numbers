@@ -61,6 +61,12 @@ The number 52 was chosen, because it's inspired by the 52 deck of cards.
 
 The number of possible permutations is `80658175170943878571660636856403766975289505440883277824000000000000`, which is a very large, but finite number!
 
+### HTML File: factorial-calculator.html
+
+This is a small, very fast infinite precision factorial calculator. All you do is input a number & press the Calculate button. Uses BigInt for calculations.
+
+On my 2025 Windows 10 desktop, computing 50000 factorial takes about 5 seconds.
+
 # Files
 
 ### 0 to 1
