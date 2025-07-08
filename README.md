@@ -1,7 +1,7 @@
 # Introduction
 Experimenting with big lists of numbers. Everything is in the "files" folder.
 
-This repository was made for fun; the amount of items in each list range from 10,000 to 100,000.
+This repository was made for fun; the amount of items in each list range from 10000 to 100000.
 
 BUT now this repo is being INVADED BY HTML FILES & MORE CREATIVITY, because I'm just like that 🤣
 
