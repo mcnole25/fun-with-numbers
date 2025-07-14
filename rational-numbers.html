@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html><head>
+<title>Rational Numbers (ℚ)</title>
+<style>
+* {
+background-color: #222;
+color: #fff;
+font-size: 16px;
+font-family: arial;
+text-align: center;
+}
+#table {
+display: grid;
+grid-template-columns: repeat(15, 1fr);
+}
+sup, sub {
+font-size: 12px;
+line-height: 0px;
+}
+.elem {
+height: 40px;
+line-height: 40px;
+}
+#pagetext {
+display: inline-block;
+margin: 0px 20px;
+}
+</style>
+</head><body>
+<button onclick="update(-1);">&lt;== Previous</button>
+<span id="pagetext"></span>
+<button onclick="update(1);">Next ==&gt;</button>
+<div id="table"></div>
+<script>
+page = 1; update(0);
+function update(p) {
+dv = "<div class=\"elem\">";
+table.innerHTML = ""; page += p;
+if (page < 1) {page = 1;}
+pagetext.innerText = "Page " + page;
+out = (page == 1) ? ["<div class=\"elem\">0</div>"] : [];
+for (j = 25 * (page - 1) + 1; j <= 25 * page; j++) {
+for (i = 1; i < j; i++) {
+n = (j - i); d = i;
+if (coprime(n, d)) {
+if (terminating(d)) {
+out.push(dv + n/d + "</div>");
+} else if (n > d) {
+out.push(dv + Math.floor(n/d) + " <sup>" + (n % d) + "</sup>&#8260;<sub>" + d + "</sub></div>");
+} else {
+out.push(dv + "<sup>" + n + "</sup>&#8260;<sub>" + d + "</sub></div>");
+}
+out.push(dv + "-" + String(out[out.length - 1]).split(dv)[1]);
+}}}
+table.innerHTML = out.join("");
+}
+function coprime(a, b) {
+while (b != 0) {
+temp = b;
+b = a % b;
+a = temp;
+}
+return a == 1;
+}
+function terminating(a) {
+while (a % 2 == 0) {a /= 2;}
+while (a % 5 == 0) {a /= 5;}
+return a == 1;
+}
+</script>
+</body></html>
