@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html><head>
+<title>Arithmetic Generator</title>
+<style>
+* {
+background-color: #222;
+color: #fff;
+font-size: 16px;
+font-family: arial;
+}
+#results {
+display: grid;
+grid-template-columns: repeat(6, 1fr);
+line-height: 40px;
+}
+input {
+width: 100px;
+}
+.spacing {
+display: inline-block;
+}
+</style>
+</head><body>
+<span>Calculation limit:</span>
+<input type="number" id="limit" value=10>
+<span class="spacing"></span>
+<span>Filter:</span>
+<select id="filters">
+<option value=0>All rationals</option>
+<option value=1>No negative numbers</option>
+<option value=2>Terminating decimals</option>
+<option value=3>Whole numbers</option>
+<option value=4>Positive integers</option>
+</select>
+<button onclick="ACTUALLYgenerate(filters.value);">Generate</button>
+<div id="results"></div>
+<script>
+function ACTUALLYgenerate(fil) {
+if (fil == 0) {generate(0, false, 0, false);}
+if (fil == 1) {generate(0, true, 1, false);}
+if (fil == 2) {generate(1, false, 2, false);}
+if (fil == 3) {generate(2, false, 3, false);}
+if (fil == 4) {generate(2, false, 3, true);}
+}
+function generate(type, pos, filter, posint) {
+vals = posint ? [] : ["0/1"];
+for (j = 1; j <= limit.value; j++) {
+for (i = 1; i < j; i++) {
+if (gcf((j - i), i) == 1) {
+if ((type == 0) || (type == 1 && terminating(i)) || (type == 2 && i == 1)) {
+vals.push((j - i) + "/" + i);
+if (!pos) {
+vals.push(-(j - i) + "/" + i);
+}}}}}
+ar = [];
+for (i = 0; i < vals.length; i++) {
+for (j = 0; j < vals.length; j++) {
+fa = Number(vals[i].split("/")[0]);
+fb = Number(vals[i].split("/")[1]);
+fc = Number(vals[j].split("/")[0]);
+fd = Number(vals[j].split("/")[1]);
+ar.push(convert(vals[i]) + " + " + convert(vals[j]) + " = " + convert((fa * fd + fb * fc) + "/" + (fb * fd)));
+ar.push(convert(vals[i]) + " &minus; " + convert(vals[j]) + " = " + convert((fa * fd - fb * fc) + "/" + (fb * fd)));
+ar.push(convert(vals[i]) + " * " + convert(vals[j]) + " = " + convert((fa * fc) + "/" + (fb * fd)));
+if (vals[j] != "0/1") {
+ar.push(convert(vals[i]) + "/" + convert(vals[j]) + " = " + convert((fa * fd) + "/" + (fb * fc)));
+}}}
+ar = [...new Set(ar)];
+if (filter > 0) {ar = ar.filter(z => !z.includes("-"));}
+if (filter > 1) {ar = ar.filter(z => !z.includes("&#8260;"));}
+if (filter > 2) {ar = ar.filter(z => !z.includes("."));}
+if (posint) {ar = ar.filter(z => !z.includes("= 0"))}
+results.innerHTML = "<div>" + ar.join("</div><div>") + "</div>";
+}
+function gcf(a, b) {
+if (a == 0) {return 1;}
+while (b != 0) {
+[a, b] = [b, a % b];
+}
+return a;
+}
+function convert(fr) {
+num = fr.split("/")[0];
+den = fr.split("/")[1];
+if (num == 0 || den == 0) {return 0;}
+neg = num.includes("-");
+num = num.replace(/-/g, "");
+if (den.includes("-")) {
+den = den.replace(/-/g, "");
+neg = !neg;
+}
+sim = gcf(num, den);
+num /= sim; den /= sim;
+if (terminating(den)) {
+val = num/den;
+} else if (num > den) {
+val = String(Math.floor(num/den)) + "&thinsp;" + (num % den) + "&#8260;" + den;
+} else {
+val = num + "&#8260;" + den;
+}
+if (neg) {val = "-" + val;}
+return val;
+}
+function terminating(aa) {
+while (aa % 2 == 0) {aa /= 2;}
+while (aa % 5 == 0) {aa /= 5;}
+return aa == 1;
+}
+</script>
+</body></html>
