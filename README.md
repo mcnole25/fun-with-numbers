@@ -7,6 +7,16 @@ BUT now this repo is being INVADED BY HTML FILES & MORE CREATIVITY, because I'm 
 
 # Non-Lists
 
+### HTML File: rational-numbers.html
+
+A paginated view of all possible decimals, fractions & integers. Negative numbers also included. This is the set of rational numbers, ℚ.
+
+Note: Lag may occur within deeper pages.
+
+### HTML File: cube-animation.html
+
+A simple cube animation with trigonometry values.
+
 ### HTML File: console-tools.html
 
 I made a big tool composed of smaller tools! Now you can have fun with the Javascript console by generating lists of numbers.
