@@ -7,6 +7,12 @@ BUT now this repo is being INVADED BY HTML FILES & MORE CREATIVITY, because I'm 
 
 # Non-Lists
 
+### HTML File: arithmetic-generator.html
+
+An extension to the "all rational numbers" tool, I have also made an arithmetic generator for rational numbers alongside that.
+
+If there are ANY wrong or unsimplified answers displayed, PLEASE LET ME KNOW IMMEDIATELY!
+
 ### HTML File: rational-numbers.html
 
 A paginated view of all possible decimals, fractions & integers. Negative numbers also included. This is the set of rational numbers, ℚ.
