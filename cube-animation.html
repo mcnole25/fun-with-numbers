@@ -13,17 +13,17 @@ text-align: center;
 display: inline-block;
 margin: 0px 50px;
 }
-#angle {
-width: 600px;
-}
 #display {
 font-size: 24px;
+display: inline-block;
+width: 200px;
+text-align: right;
 }
 input[type=range] {
 background: #1a1a1a;
-width: 1786px;
+width: 600px;
 position: relative;
-top: 7px;
+top: 4px;
 }
 input[type=range]::-moz-range-track {
 background: #111;
@@ -34,7 +34,7 @@ background: #ddd;
 </style>
 </head><body>
 <canvas id="cube" width=600 height=693></canvas>
-<br><input type="range" id="angle" min=0 max=90 value=45 step=0.25><br>
+<br><input type="range" id="angle" min=0 max=90 value=45 step=0.25>
 <b><span id="display"></span></b><br><br><br>
 <div>- Basic Trigonometric Values -</div><br>
 <span class="trig">sin(0&deg;) = 0</span>
