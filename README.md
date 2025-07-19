@@ -5,6 +5,7 @@ This repository was made for fun; the amount of items in each list range from 10
 
 BUT now this repo is being INVADED BY HTML FILES & MORE CREATIVITY, because I'm just like that 🤣
 
+This little description is a little bit outdated now, but I'm too lazy to update it. -_- zzz
 # Non-Lists
 
 ### HTML File: arithmetic-generator.html
@@ -47,7 +48,7 @@ v20250704 - Polished the team count decider feature a little bit.
 
 A comprehensive list of most known math operations & functions. Most of them originate from Desmos & other sources.
 
-There are 288 pieces of notation to explore. For any functions you don't understand, you can refer to their definitions online.
+There are over 300 pieces of notation to explore. For any functions you don't understand, you can refer to their definitions online.
 
 ### HTML File: 52-factorial.html
 
