@@ -34,16 +34,19 @@ output.value = partition(input.value);
 function partition(n) {
 let result = [];
 function helper(remaining, partition) {
-if (remaining == 0) {
+if (remaining == 0 && partition.length > 1) {
 result.push(partition.join(" + ") + " = " + n);
 return;
 }
-let max = partition.length === 0 ? remaining : partition[partition.length - 1];
+let max = partition.length == 0 ? remaining : partition[partition.length - 1];
 for (let i = Math.min(max, remaining); i > 0; i--) {
 helper(remaining - i, [...partition, i]);
 }}
 helper(n, []);
 return result.join("\n");
 }
+setInterval(function() {
+input.value = input.value.replace(/[A-Z][a-z]-./g, "");
+});
 </script>
 </body></html>
