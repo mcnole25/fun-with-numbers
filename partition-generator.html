@@ -28,8 +28,9 @@ width: 100px;
 <script>
 function generate() {
 output.value = "";
+if (input.value > 0) {
 output.value = partition(input.value);
-}
+}}
 function partition(n) {
 let result = [];
 function helper(remaining, partition) {
